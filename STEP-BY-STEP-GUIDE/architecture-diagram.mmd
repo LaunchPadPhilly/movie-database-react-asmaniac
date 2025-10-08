@@ -1,0 +1,13 @@
+graph TD
+    A[User] -->|Search Query| B[SearchPage]
+    B -->|useDebounce| C[useMovieSearch Hook]
+    C -->|TanStack Query| D[OMDb API Service]
+    D -->|HTTP Request| E[OMDb API]
+    E -->|JSON Response| D
+    D -->|Cached Data| C
+    C -->|Results| B
+    B -->|Render| F[MovieCard Grid]
+    F -->|Click Card| G[MovieDetailPage]
+    G -->|useMovieDetail Hook| D
+    G -->|Toggle Favorite| H[useFavorites Hook]
+    H -->|Persist| I[localStorage]
