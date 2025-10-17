@@ -1,10 +1,10 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AppShell from './components/AppShell';
 import SearchPage from './pages/SearchPage';
 import MovieDetailPage from './pages/MovieDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
+import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -18,17 +18,19 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <AppShell>
-          <Routes>
-            <Route path="/" element={<SearchPage />} />
-            <Route path="/movie/:imdbID" element={<MovieDetailPage />} />
-            <Route path="/favorites" element={<FavoritesPage />} />
-          </Routes>
-        </AppShell>
-      </Router>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <AppShell>
+            <Routes>
+              <Route path="/" element={<SearchPage />} />
+              <Route path="/movie/:imdbID" element={<MovieDetailPage />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
+            </Routes>
+          </AppShell>
+        </Router>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

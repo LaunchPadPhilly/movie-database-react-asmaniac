@@ -1,0 +1,28 @@
+.search-form {
+  width: 100%;
+  max-width: 500px; /* keep search bar from being huge */
+  margin: 0 auto;
+}
+
+.search-input {
+  height: 40px; /* fixed height */
+  padding-left: 40px; /* space for the icon */
+  padding-right: 40px; /* space for clear button */
+  font-size: 1rem;
+}
+
+.search-icon-container,
+.clear-button-container {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.clear-icon {
+  width: 20px;
+  height: 20px;
+}
