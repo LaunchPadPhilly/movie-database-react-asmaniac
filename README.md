@@ -1,16 +1,35 @@
-# React + Vite
+# Movie Database React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application to search, view, and save your favorite movies. This project uses the OMDB API, React Query for data fetching, and custom CSS for styling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Demo](#demo)
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [Folder Structure](#folder-structure)
+- [Component API](#component-api)
+- [Testing](#testing)
+- [Deployment](#deployment)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Features
+- Search movies with debounced input (waits 500ms after typing)
+- Movie detail pages with poster, plot, ratings, and info
+- Add and remove favorites
+- Load more pagination for search results
+- Lazy-loaded images for performance
+- Responsive design for desktop, tablet, and mobile
+- Loading spinners and micro-interactions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Setup Instructions
+
+1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd movie-database-react-asmaniac
